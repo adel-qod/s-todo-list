@@ -22,7 +22,7 @@ import os#to delete files
 # THIS IS TESTED FOR python 2.7 and not later versions
 #############################################################
 def printOptionsList():
-	print 'Welcome to your task manager, ' + getpass.getuser()
+	print 'Welcome to your shell to-do list, ' + getpass.getuser()
 	print 'To add a task, type add'
 	print 'To view task list, type list'
 	print 'To check tasks as finished, type finish'
