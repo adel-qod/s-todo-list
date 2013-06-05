@@ -1,0 +1,25 @@
+This is a simple, light weight to-do list to be used from a shell interface
+
+NAME: s-todo-list stands for SHELL TO DO LIST
+
+It allows the insertion, completion and listing of tasks.
+
+Tasks should have two attributes, importance and urgency.
+Importance can take two values: Important or not
+Urgency can take two values: urgent or not
+
+The code is a straight-forward, scripting style code with no complex objects
+The code as it currently stands needs some cleaning to make it more usable
+
+We've got the following functions:
+printOptionsList: prints the main menu of the program
+clear: clears the terminal screen and returns the cursor to the up-left corner
+add: adds a new task
+listTasks: Lists the tasks the user has
+finish: marks a task as completed and removes it from the list
+
+then there's a section, I am marketing it with a comment as the main.
+It basically clears the terminal, prints the user info and and then promts the user for input and handles it accordingly
+
+
+NOTE: SOURCE CODE IS UNDER THE BSD-2 LICENSE
