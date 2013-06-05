@@ -50,8 +50,8 @@ def add():
 		fp.write(urgency + '\n')
 		fp.close()
 		print "Task entered.."
-		answer = raw_input("Are you done?")
-	       	if answer == 'y':
+		answer = raw_input("Are you done?(y or yes)")
+	       	if answer == 'y' or answer == 'yes':
 			clear()
 			printOptionsList()
 			break
@@ -75,7 +75,7 @@ def listTasks():
 	except IOError as e:
 		print "There are no tasks\n"
 		printOptionsList()
-		return
+		return 'error'
 
 	with open('./tasks', 'r') as fp:
                 s = fp.readline()
@@ -103,7 +103,9 @@ def listTasks():
         fp.close()
 
 def finish():
-	listTasks()
+	err = listTasks()
+	if err == 'error':
+		return
 	while True:	
 		taskName = raw_input('Completed task name or type done to finish:  ')
 		fp = open('./tasks','r')
@@ -128,7 +130,11 @@ while True:
 	elif userInput == 'add':
 		add()
 	elif userInput == 'list' or userInput =='ls' or userInput == 'view':
+		print("")
 		listTasks()
+		print("****************************************")
+		print ("*************************************************\n\n")
+		printOptionsList()
 	elif userInput == 'finish' or userInput == 'done':
 		finish()
         elif userInput == 'help': 
